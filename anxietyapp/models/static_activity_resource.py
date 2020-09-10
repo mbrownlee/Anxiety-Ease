@@ -3,7 +3,7 @@ from .activity_type import ActivityType
 
 
 class StaticActivityResource(models.Model):
-    activty_type = models.ForeignKey(ActivityType, on_delete=models.DO_NOTHING)
+    activity_type = models.ForeignKey(ActivityType, on_delete=models.DO_NOTHING)
     resource = models.CharField(max_length=300)
     
 

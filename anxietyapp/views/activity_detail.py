@@ -4,7 +4,8 @@ from rest_framework.response import Response
 from rest_framework import serializers
 from rest_framework import status
 from rest_framework.decorators import action
-from anxietyapp.models import ActivityType, User
+from django.contrib.auth.models import User
+from anxietyapp.models import ActivityType, ActivityDetail
 
 
 class ActivityDetailSerializer(serializers.HyperlinkedModelSerializer):
@@ -15,7 +16,7 @@ class ActivityDetailSerializer(serializers.HyperlinkedModelSerializer):
             view_name='activitydetail',
             lookup_field='id'
         )
-        fields = ('id', 'user_id', 'activity_type_id', 'rating', 'notes')
+        fields = ('id', 'user_id', 'activity_type_id', 'rating', 'note')
 
 
 class ActivityDetailView(ViewSet):
@@ -29,7 +30,7 @@ class ActivityDetailView(ViewSet):
         new_activity_detail = ActivityDetail()
         new_activity_detail.activity_type = activity_type
         new_activity_detail.user = user
-        new_activity_detail.notes = request.data["notes"]
+        new_activity_detail.note = request.data["note"]
         new_activity_detail.rating = request.data["rating"]
 
         new_activity_detail.save()
@@ -76,7 +77,7 @@ class ActivityDetailView(ViewSet):
     def update(self, request, pk=None):
         
         activity_detail = ActivityDetail.objects.get(pk=pk)
-        activity_detail.notes = request.data["notes"]
+        activity_detail.notes = request.data["note"]
         activity_detail.rating = request.data["rating"]
         activity_detail.save()
 
