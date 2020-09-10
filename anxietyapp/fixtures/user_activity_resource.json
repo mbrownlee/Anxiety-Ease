@@ -1,0 +1,30 @@
+[
+    {
+        "model": "anxietyapp.useractivityresource",
+        "pk": 1,
+        "fields": {
+            "resource": "YouTubeLink",
+            "activity_type_id": 1,
+            "user_id": 4
+        }
+    },
+    {
+        "model": "anxietyapp.useractivityresource",
+        "pk": 2,
+        "fields": {
+            "resource": "YouTubeLink",
+            "activity_type_id": 2,
+            "user_id": 4
+        }
+    },
+    {
+        "model": "anxietyapp.useractivityresource",
+        "pk": 3,
+        "fields": {
+            "resource": "YouTubeLink",
+            "activity_type_id": 3,
+            "user_id": 4
+        }
+    }
+]
+

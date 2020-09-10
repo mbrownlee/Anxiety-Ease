@@ -5,7 +5,7 @@ from .activity_type import ActivityType
 
 class UserActivityResource(models.Model):
     user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
-    activty_type = models.ForeignKey(ActivityType, on_delete=models.DO_NOTHING)
+    activity_type = models.ForeignKey(ActivityType, on_delete=models.DO_NOTHING)
     resource = models.CharField(max_length=300)
     
 

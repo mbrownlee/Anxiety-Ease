@@ -1,0 +1,23 @@
+[
+    {
+        "model": "anxietyapp.activitytype",
+        "pk": 1,
+        "fields": {
+            "name": "Deep Breathing"
+        }
+    },
+    {
+        "model": "anxietyapp.activitytype",
+        "pk": 2,
+        "fields": {
+            "name": "Five-Four-Three-Two-One"
+        }
+    },
+    {
+        "model": "anxietyapp.activitytype",
+        "pk": 3,
+        "fields": {
+            "name": "Positive Talk"
+        }
+    }
+]

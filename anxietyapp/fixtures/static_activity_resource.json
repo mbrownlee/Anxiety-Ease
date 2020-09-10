@@ -1,0 +1,27 @@
+[
+    {
+        "model": "anxietyapp.staticactivityresource",
+        "pk": 1,
+        "fields": {
+            "resource": "Breath In",
+            "activity_type_id": 1
+        }
+    },
+    {
+        "model": "anxietyapp.staticactivityresource",
+        "pk": 2,
+        "fields": {
+            "resource": "Name 5 things you can see",
+            "activity_type_id": 2
+        }
+    },
+    {
+        "model": "anxietyapp.staticactivityresource",
+        "pk": 3,
+        "fields": {
+            "resource": "This feels awful but you will be okay. No one has ever died from an anxiety attack.",
+            "activity_type_id": 3
+        }
+    }
+]
+
