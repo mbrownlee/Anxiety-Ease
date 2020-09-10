@@ -19,7 +19,7 @@ from anxietyapp.models import *
 from rest_framework import routers
 from rest_framework.authtoken.views import obtain_auth_token
 from anxietyapp.views import register_user, login_user
-from anxietyapp.views import ActivityTypeView, UserView, StaticActivityResourceView, UserActivityResourceView
+from anxietyapp.views import ActivityTypeView, UserView, StaticActivityResourceView, UserActivityResourceView, ActivityDetailView
 
 
 router = routers.DefaultRouter(trailing_slash=False)
@@ -27,6 +27,7 @@ router.register(r'activitytype', ActivityTypeView, 'activitytype')
 router.register(r'staticactivityresource', StaticActivityResourceView, 'staticactivityresource')
 router.register(r'useractivityresource', UserActivityResourceView, 'useractivityresource')
 router.register(r'users', UserView, 'user')
+router.register(r'activitydetail', ActivityDetailView, 'activitydetail')
 
 urlpatterns = [
     path('', include(router.urls)),
