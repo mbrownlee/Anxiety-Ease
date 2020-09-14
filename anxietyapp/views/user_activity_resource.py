@@ -29,9 +29,16 @@ class UserActivityResourceView(ViewSet):
 
         
     def list(self, request):
-        
-        user_activity_resource = UserActivityResource.objects.all()
+
+        # I never need a list of all resources together, only those filtered by activity type id
+        # 8000/useractivityresource?activitytypeid=2
+        user_resource_by_type = self.request.query_params.get('activitytypeid', None)
+        # ^^ this will get me the activity type id of button clicked
+        chosen_activity = ActivityType.objects.get(pk=user_resource_by_type)
+        chosen_resources_by_type = UserActivityResource.objects.filter(activity_type=chosen_activity)
 
         serializer = UserActivityResourceSerializer(
-            user_activity_resource, many=True, context={'request': request})
-        return Response(serializer.data)
+            chosen_resources_by_type, many=True, context={'request': request})
+        return Response(serializer.data)        
+        
+        
