@@ -23,15 +23,17 @@ class ActivityDetailView(ViewSet):
 
     def create(self, request):
 
-        user = User.objects.get(pk=request.data["user_id"])
+        # user = User.objects.get(pk=request.data["user_id"])
         activity_type = ActivityType.objects.get(
             pk=request.data["activity_type_id"])
 
         new_activity_detail = ActivityDetail()
         new_activity_detail.activity_type = activity_type
-        new_activity_detail.user = user
-        new_activity_detail.note = request.data["note"]
-        new_activity_detail.rating = request.data["rating"]
+        new_activity_detail.user = request.auth.user
+        if "note" in request.data:
+            new_activity_detail.note = request.data["note"]
+        if "rating" in request.data:
+            new_activity_detail.rating = request.data["rating"]
 
         new_activity_detail.save()
 
