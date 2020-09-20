@@ -16,7 +16,9 @@ class ActivityDetailSerializer(serializers.HyperlinkedModelSerializer):
             view_name='activitydetail',
             lookup_field='id'
         )
-        fields = ('id', 'user_id', 'activity_type_id', 'rating', 'note')
+        fields = ('id', 'user_id', 'activity_type', 'rating', 'note', 'created_at')
+        depth = 1
+
 
 
 class ActivityDetailView(ViewSet):
@@ -54,7 +56,7 @@ class ActivityDetailView(ViewSet):
 
     def list(self, request):
         
-        activity_detail = ActivityDetail.objects.all()
+        activity_detail = ActivityDetail.objects.filter(user=request.auth.user)
         serializer = ActivityDetailSerializer(
             activity_detail,
             many=True,
@@ -79,7 +81,7 @@ class ActivityDetailView(ViewSet):
     def update(self, request, pk=None):
         
         activity_detail = ActivityDetail.objects.get(pk=pk)
-        activity_detail.notes = request.data["note"]
+        activity_detail.note = request.data["note"]
         activity_detail.rating = request.data["rating"]
         activity_detail.save()
 
