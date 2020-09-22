@@ -2,10 +2,15 @@ from django.http import HttpResponseServerError
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers
+from anxietyapp.mixins import PaginationMixin
 from rest_framework import status
 from rest_framework.decorators import action
+from rest_framework.settings import api_settings
+from rest_framework.views import APIView
 from django.contrib.auth.models import User
 from anxietyapp.models import ActivityType, ActivityDetail
+
+
 
 
 class ActivityDetailSerializer(serializers.HyperlinkedModelSerializer):
@@ -22,6 +27,8 @@ class ActivityDetailSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class ActivityDetailView(ViewSet):
+   
+    
 
     def create(self, request):
 
@@ -64,6 +71,7 @@ class ActivityDetailView(ViewSet):
         )
         return Response(serializer.data)
 
+
     def destroy(self, request, pk=None):
        
         try:
@@ -86,3 +94,17 @@ class ActivityDetailView(ViewSet):
         activity_detail.save()
 
         return Response({}, status=status.HTTP_202_ACCEPTED)
+
+    
+class LimitedActivityListView(APIView, PaginationMixin):
+    serializer_class = ActivityDetailSerializer
+    pagination_class = api_settings.DEFAULT_PAGINATION_CLASS 
+    def get(self, request):
+        
+        queryset = ActivityDetail.objects.filter(user=request.auth.user)
+        page = self.paginate_queryset(queryset)
+        if page is not None:
+
+            serializer = self.serializer_class(
+                page, many=True, context={'request': request})
+            return self.get_paginated_response(serializer.data)
