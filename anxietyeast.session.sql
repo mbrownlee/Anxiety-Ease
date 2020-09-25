@@ -31,3 +31,84 @@ insert into anxietyapp_staticactivityresource (resource, activity_type_id) value
 insert into anxietyapp_staticactivityresource (resource, activity_type_id) values ("Panic attacks are terrifying but not dangerous. They are just a response to the heightened sensations we feel.", 3);
 
 insert into anxietyapp_staticactivityresource (resource, activity_type_id) values ("You and your body are capable of handling everything you are feeling right now.", 3);
+
+INSERT INTO anxietyapp_activitytype (name)
+VALUES ('Muscle Relaxation');
+
+INSERT INTO anxietyapp_staticactivityresource ( resource, activity_type_id)
+values ("Tense your left hand.", 4);
+
+INSERT INTO anxietyapp_staticactivityresource ( resource, activity_type_id)
+values ("Release your left hand muscles.", 4);
+
+INSERT INTO anxietyapp_staticactivityresource ( resource, activity_type_id)
+values ("Tense your right hand muscles.", 4);
+
+INSERT INTO anxietyapp_staticactivityresource ( resource, activity_type_id)
+values ("Relax your right hand muscles.", 4);
+
+INSERT INTO anxietyapp_staticactivityresource ( resource, activity_type_id)
+values ("Tense your left arm muscles.", 4);
+
+INSERT INTO anxietyapp_staticactivityresource ( resource, activity_type_id)
+values ("Relax your left arm muscles.", 4);
+
+INSERT INTO anxietyapp_staticactivityresource ( resource, activity_type_id)
+values ("Tense your right arm muscles.", 4);
+
+INSERT INTO anxietyapp_staticactivityresource ( resource, activity_type_id)
+values ("Relax your right arm muscles.", 4);
+
+INSERT INTO anxietyapp_staticactivityresource ( resource, activity_type_id)
+values ("Bring both shoulders up to your ears and hold the tension.", 4);
+
+INSERT INTO anxietyapp_staticactivityresource ( resource, activity_type_id)
+values ("Relax your shoulders.", 4);
+
+INSERT INTO anxietyapp_staticactivityresource ( resource, activity_type_id)
+values ("Curl the toes on your left foot and hold it.", 4);
+
+INSERT INTO anxietyapp_staticactivityresource ( resource, activity_type_id)
+values ("Relax the toes on your left foot.", 4);
+
+INSERT INTO anxietyapp_staticactivityresource ( resource, activity_type_id)
+values ("Curl the toes on your right foot and hold it.", 4);
+
+INSERT INTO anxietyapp_staticactivityresource ( resource, activity_type_id)
+values ("Relax the toes on your right foot.", 4);
+
+INSERT INTO anxietyapp_staticactivityresource ( resource, activity_type_id)
+values ("Tense the muscles in your left calf by pulling your toes up toward you.", 4);
+
+INSERT INTO anxietyapp_staticactivityresource ( resource, activity_type_id)
+values ("Relax the muscles in your left calf.", 4);
+
+INSERT INTO anxietyapp_staticactivityresource ( resource, activity_type_id)
+values ("Tense the muscles in your right calf by pulling your toes up toward you.", 4);
+
+INSERT INTO anxietyapp_staticactivityresource ( resource, activity_type_id)
+values ("Relax the muscles in your right calf.", 4);
+
+INSERT INTO anxietyapp_staticactivityresource ( resource, activity_type_id)
+values ("Tense the muscles in your left thigh and hold it.", 4);
+
+INSERT INTO anxietyapp_staticactivityresource ( resource, activity_type_id)
+values ("Relax the muscles in your left thigh.", 4);
+
+INSERT INTO anxietyapp_staticactivityresource ( resource, activity_type_id)
+values ("Tense the muscles in your right thigh and hold it.", 4);
+
+INSERT INTO anxietyapp_staticactivityresource ( resource, activity_type_id)
+values ("Relax the muscles in your right thigh.", 4);
+
+INSERT INTO anxietyapp_staticactivityresource ( resource, activity_type_id)
+values ("Tense your buttock muscles.", 4);
+
+INSERT INTO anxietyapp_staticactivityresource ( resource, activity_type_id)
+values ("Telax your buttock muscles.", 4);
+
+INSERT INTO anxietyapp_staticactivityresource ( resource, activity_type_id)
+values ("Tense your stomach muscles.", 4);
+
+INSERT INTO anxietyapp_staticactivityresource ( resource, activity_type_id)
+values ("Relax your stomach muscles.", 4);
