@@ -101,7 +101,7 @@ class LimitedActivityListView(APIView, PaginationMixin):
     pagination_class = api_settings.DEFAULT_PAGINATION_CLASS 
     def get(self, request):
         
-        queryset = ActivityDetail.objects.filter(user=request.auth.user)
+        queryset = ActivityDetail.objects.filter(user=request.auth.user).order_by("-created_at")
         page = self.paginate_queryset(queryset)
         if page is not None:
 
