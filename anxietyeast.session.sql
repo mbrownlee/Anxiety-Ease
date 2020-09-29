@@ -112,3 +112,5 @@ values ("Tense your stomach muscles.", 4);
 
 INSERT INTO anxietyapp_staticactivityresource ( resource, activity_type_id)
 values ("Relax your stomach muscles.", 4);
+
+select * from auth_user;
